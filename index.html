@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmad Farahani — Graphics Engineer</title>
+<meta name="description" content="Ahmad Farahani, graphics engineer at Spark Creative. Real-time rendering, engine and R&D work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Spline+Sans+Mono:wght@400;600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=20261120e">
+<noscript><style>.loom canvas, .loom figcaption { display: none; } .photo { position: static; }</style></noscript>
+</head>
+<body>
+
+<header class="bar">
+  <span class="bar-label">Row 0001 · Farahani.cv</span>
+  <div class="holes" aria-hidden="true"></div>
+  <nav class="lang" aria-label="Language">
+    <a href="index.html" aria-current="page">EN</a>
+    <a href="ja.html" lang="ja">日本語</a>
+    <a href="fa.html" lang="fa">فارسی</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="top">
+  <div class="hero-text">
+    <h1>Ahmad<br>Farahani</h1>
+    <p class="role">Graphics Engineer at Spark&nbsp;Creative · Tokyo,&nbsp;Japan</p>
+    <p class="hook">Real-time rendering specialist focused on lighting, water, and volumetrics. Former lead engineer who architected a game from client to server. Thrives on low-level problems where physics, mathematics, and code meet.</p>
+    <p class="act">
+      <a class="btn" href="mailto:ce.afarahani@yahoo.com">Email Ahmad</a>
+      <a class="ghost" href="#work">See the work ↓</a>
+      <a class="ghost" href="pdf/Ahmad-Farahani-Resume-EN.pdf">Résumé PDF</a>
+    </p>
+  </div>
+  <figure class="loom">
+    <canvas id="weave" width="1120" height="630" aria-hidden="true"></canvas>
+    <img class="photo" src="photo.png" alt="Ahmad Farahani" width="125" height="149">
+    <figcaption>
+      <span>A lit sphere on a plane, ray-traced in your browser and woven in gold.</span>
+      <span>112 × 63 threads</span>
+    </figcaption>
+  </figure>
+</section>
+
+<section id="work">
+  <h2>Work</h2>
+  <div class="rows">
+    <article class="row">
+      <span class="when" dir="ltr">Nov&nbsp;2025 – Present</span>
+      <div class="who">
+        <b>Spark Creative (SPARK&nbsp;Inc.)</b>
+        <span>Graphics Engineer, <i>Zeno Survivor</i></span>
+        <span>Team of about 20</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>Lead rendering on <a href="https://store.steampowered.com/app/5105370/Zeno_Survivor/"><i>Zeno Survivor</i></a> (PC; developed and published by Alim Co., Ltd.) as the main graphics programmer, building its core rendering systems from scratch in Unity URP.</li>
+          <li>Engineer water rendering with caustics, refraction, and reflection, alongside sky and terrain rendering.</li>
+          <li>Light water and atmosphere with the same radiative-transfer techniques: single- and multiple-scattering approximations and precomputed lookup tables.</li>
+          <li>Implement volumetric lights and shadows with froxel grids and ray marching.</li>
+          <li>Develop ambient occlusion and runtime mesh generation; overhaul the stylized post-processing and contribute to vertex animation textures (VAT).</li>
+          <li>Build instancing, batching, and culling, both within the water and terrain systems and as standalone systems.</li>
+          <li>Extend SPARK GEAR, SPARK's standalone VFX engine with its own render pipeline and plugins for Unity, Unreal Engine, and Godot: volumetric rendering, VDB support, editor UI, serialization, and the Unity plugin.</li>
+        </ul>
+        <p>Technologies: C#, C++, C++/CLI, HLSL, Unity URP, DirectX.</p>
+      </div>
+      <p class="result"><i>Zeno Survivor</i>: listed on Steam and featured in Steam Next Fest. Early Access coming soon.</p>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">Feb&nbsp;2024 – Oct&nbsp;2025</span>
+      <div class="who">
+        <b>LinkedBrain Inc.</b>
+        <span>Lead Engineer, <i>BETZ</i></span>
+        <span>Team of 10</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>Architected the game's client, server, and infrastructure, and chose the full stack, from frameworks to databases.</li>
+          <li>Wrote shaders and customized the Unity render pipeline.</li>
+          <li>Built the core game layer: asynchronous programming, ECS, networking, client-server communication, serialization, and game logic.</li>
+          <li>Created Unity Visual Scripting tools and editor extensions that let designers work independently, freeing engineers for low-level work.</li>
+          <li>Led scheduling and task planning, mentored the engineering team, and reused BETZ's libraries across other company projects.</li>
+        </ul>
+        <p>Technologies: C#, Unity, Zenject, Groovy, Jenkins, PowerShell, ASP.NET, MagicOnion, DynamoDB, Redis, Roslyn.</p>
+        <p><a href="https://www.youtube.com/watch?v=dxK6rImEeg4"><i>BETZ</i> teaser on YouTube</a> (announced, not yet released).</p>
+      </div>
+      <p class="result">The architecture let the whole team build in parallel and carried the project to a working MVP demo. Mentoring increased the number of engineers capable of advanced design and implementation.</p>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">Apr&nbsp;2022 – Dec&nbsp;2023</span>
+      <div class="who">
+        <b>DONUTS Co., Ltd.</b>
+        <span>Game Engineer, <i>Tansha no Tora</i> (<span class="nw">単車の虎</span>)</span>
+        <span>Team of 50</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>Shipped a new limited-time event every six weeks (about 12 in total) and several permanent events for a game with about 200,000 monthly active accounts.</li>
+          <li>Developed game-wide chat and an in-game manga reader.</li>
+          <li>Created an AI-based detector for auto-play cheat tools in Python and C++.</li>
+          <li>Set up CI/CD pipelines, wrote shared database and utility libraries, and maintained the Android app.</li>
+          <li>Mentored new graduates and reviewed code.</li>
+        </ul>
+        <p>Technologies: PHP, Groovy, Java, JavaScript/TypeScript, Bash, Jenkins, AWS, MySQL, Apache, Redis, Python, C++.</p>
+      </div>
+      <p class="result">Zero revenue-impacting bugs in 21 months. Automated parts of the deployment process and delivered game-wide chat on limited server resources.</p>
+    </article>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="rows projects">
+    <article class="row">
+      <span class="when" dir="ltr">Source available</span>
+      <div class="who">
+        <b><i>Unity.HBAO</i></b>
+        <span>HBAO+ for Unity, C#</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>Implemented HBAO+ screen-space ambient occlusion for Unity in C#, published under ZeroIQGames as source-available code, free for non-commercial and educational use.</li>
+        </ul>
+      </div>
+      <p class="result"><a href="https://github.com/ZeroIQGames/Unity.HBAO">Source on GitHub</a></p>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">Demo</span>
+      <div class="who">
+        <b><i>Project Absolute Infinity</i></b>
+        <span>Unreal Engine action-game demo</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>Designed an extensible, maintainable Unreal Engine action-game architecture that adapts to fighting games and other action genres with minimal code changes.</li>
+        </ul>
+      </div>
+      <p class="result"><a href="https://www.youtube.com/watch?v=-jWhDL1kAXA">Video</a> · <a href="https://dev.azure.com/BKCo-Games/Project-Absolute-Infinity/_git/Project-Absolute-Infinity">Repository</a> · <a href="https://drive.google.com/file/d/1bX-0slDjJbRx-vKBruGzmFWopldHezax/view">Build</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div>
+      <h3>Rendering</h3>
+      <ul>
+        <li>Lighting: atmospheric scattering, precomputed lookup tables, volumetric lights and shadows, ambient occlusion</li>
+        <li>Volumetrics: froxels, ray marching, VDB</li>
+        <li>Water: caustics, refraction, reflection</li>
+        <li>Terrain rendering</li>
+        <li>Stylized post-processing</li>
+        <li>Runtime mesh generation, vertex animation textures (VAT)</li>
+        <li>Instancing, batching, and culling</li>
+        <li>DirectX, custom render pipelines</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Engines, tools, and architecture</h3>
+      <ul>
+        <li>Unity (URP), Unreal Engine, Diligent Engine</li>
+        <li>Engine integration and editor extensions</li>
+        <li>Unity Visual Scripting, Roslyn</li>
+        <li>Software architecture, dependency injection (Zenject, ASP.NET)</li>
+        <li>Parallel, asynchronous, and reactive programming</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Backend and infrastructure</h3>
+      <ul>
+        <li>Client-server architecture and networking</li>
+        <li>ASP.NET, MagicOnion</li>
+        <li>AWS, Microsoft Azure</li>
+        <li>DynamoDB, MySQL, Redis</li>
+        <li>CI/CD (Jenkins)</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Languages</h3>
+      <ul>
+        <li>C#, C++, C++/CLI, HLSL</li>
+        <li>Python</li>
+        <li>Java, JavaScript/<wbr>TypeScript, PHP</li>
+        <li>Groovy, Bash, PowerShell</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education and certificates</h2>
+  <div class="rows">
+    <article class="row">
+      <span class="when" dir="ltr">Apr&nbsp;2019 – Mar&nbsp;2022</span>
+      <div class="who">
+        <b>University of Tokyo</b>
+        <span>Graduate School of Engineering, Department of Civil Engineering</span>
+      </div>
+      <div class="what">
+        <p>Master of Engineering. Research: cementless concrete made with alcohol under high temperature and pressure.</p>
+      </div>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">Sep&nbsp;2014 – Jun&nbsp;2018</span>
+      <div class="who">
+        <b>Sharif University of Technology</b>
+        <span>Civil Engineering</span>
+      </div>
+      <div class="what">
+        <p>Bachelor of Science.</p>
+      </div>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">2010 – 2014</span>
+      <div class="who">
+        <b>National Organization for Development of Exceptional Talents (NODET)</b>
+        <span>High school, Mathematics and Physics</span>
+      </div>
+      <div class="what">
+        <p>High school diploma.</p>
+      </div>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">Certificates and tests</span>
+      <div class="who">
+        <b>AWS Certified Cloud Practitioner</b>
+        <span><span dir="ltr">Mar 2023</span></span>
+      </div>
+      <div class="what">
+        <p>English: IELTS General Training 8.0 (<span dir="ltr">Apr 2024</span>); TOEFL 106 (<span dir="ltr">Aug 2018</span>).</p>
+        <p>Japanese: JLPT N2, 148 points (<span dir="ltr">Oct 2018</span>).</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="reach">
+    <a class="btn" href="mailto:ce.afarahani@yahoo.com">ce.afarahani@yahoo.com</a>
+    <div class="pdfs" role="group" aria-labelledby="pdf-label">
+      <span class="pdf-label" id="pdf-label">Résumé PDF</span>
+      <a class="pdf-card" href="pdf/Ahmad-Farahani-Resume-EN.pdf" lang="en"><span>English</span><span>PDF</span></a>
+      <a class="pdf-card" href="pdf/Ahmad-Farahani-Resume-JA.pdf" lang="ja"><span>日本語</span><span>PDF</span></a>
+      <a class="pdf-card" href="pdf/Ahmad-Farahani-Resume-FA.pdf" lang="fa"><span>فارسی</span><span>PDF</span></a>
+    </div>
+  </div>
+  <p class="updated">Last updated November 2026</p>
+</footer>
+
+<script src="weave.js?v=20261120e" defer></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ファラハニ・アハマド — グラフィックスエンジニア</title>
+<meta name="description" content="ファラハニ・アハマド。株式会社スパーク（SPARK Inc.）のグラフィックスエンジニア。リアルタイムレンダリング、エンジン、R&Dの仕事。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Spline+Sans+Mono:wght@400;600&family=Figtree:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;700&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=20261120e">
+<noscript><style>.loom canvas, .loom figcaption { display: none; } .photo { position: static; }</style></noscript>
+</head>
+<body>
+
+<header class="bar">
+  <span class="bar-label">Row 0001 · Farahani.cv</span>
+  <div class="holes" aria-hidden="true"></div>
+  <nav class="lang" aria-label="Language">
+    <a href="index.html" lang="en">EN</a>
+    <a href="ja.html" lang="ja" aria-current="page">日本語</a>
+    <a href="fa.html" lang="fa">فارسی</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="top">
+  <div class="hero-text">
+    <h1>ファラハニ・<br>アハマド</h1>
+    <p class="role">株式会社スパーク（SPARK Inc.）グラフィックスエンジニア／東京</p>
+    <p class="hook">リアルタイムレンダリング、特にライティング・水・ボリュメトリクスを専門とするエンジニアです。リードエンジニアとしてゲームのクライアントからサーバーまでを設計した経験を持ち、物理・数学・プログラミングが交わる低レイヤーの課題を得意とします。</p>
+    <p class="act">
+      <a class="btn" href="mailto:ce.afarahani@yahoo.com">メールを送る</a>
+      <a class="ghost" href="#work">経歴を見る ↓</a>
+      <a class="ghost" href="pdf/Ahmad-Farahani-Resume-JA.pdf">職務経歴書 PDF</a>
+    </p>
+  </div>
+  <figure class="loom">
+    <canvas id="weave" width="1120" height="630" aria-hidden="true"></canvas>
+    <img class="photo" src="photo.png" alt="ファラハニ・アハマド" width="125" height="149">
+    <figcaption>
+      <span>平面に置かれた球をブラウザ内でレイトレーシングし、金色の糸で織り上げました。</span>
+      <span>112 × 63 本の糸</span>
+    </figcaption>
+  </figure>
+</section>
+
+<section id="work">
+  <h2>職歴</h2>
+  <div class="rows">
+    <article class="row">
+      <span class="when" dir="ltr">2025-11 – 現在</span>
+      <div class="who">
+        <b>株式会社スパーク（SPARK&nbsp;Inc.）</b>
+        <span>グラフィックスエンジニア、『Zeno Survivor』</span>
+        <span>約20名のチーム</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li><a href="https://store.steampowered.com/app/5105370/Zeno_Survivor/">『Zeno Survivor』</a>（PC、開発・発売：株式会社アリム）のメイングラフィックスプログラマーとして、主要なレンダリングシステムを Unity URP 上でゼロから構築。</li>
+          <li>コースティクス、屈折、反射を備えた水のレンダリングに加え、空と地形のレンダリングを開発。</li>
+          <li>水と大気のライティングに共通の放射伝達手法を適用：単一・多重散乱近似と事前計算 LUT。</li>
+          <li>フロクセルグリッドとレイマーチングでボリュメトリックライトとシャドウを実装。</li>
+          <li>アンビエントオクルージョンと実行時メッシュ生成を開発。スタイライズドポストエフェクトの刷新、頂点アニメーションテクスチャ（VAT）にも貢献。</li>
+          <li>水・地形に組み込む形と単体システムの両方で、インスタンシング、バッチング、カリングを構築。</li>
+          <li>独自レンダーパイプラインを持ち、Unity・Unreal Engine・Godot 向けプラグインを備えた SPARK 社のスタンドアロン VFX エンジン「SPARK GEAR」を拡張：ボリュメトリックレンダリング、VDB 対応、エディタ UI、シリアライズ、Unity プラグイン。</li>
+        </ul>
+        <p>使用技術：C#、C++、C++/CLI、HLSL、Unity URP、DirectX。</p>
+      </div>
+      <p class="result">『Zeno Survivor』：Steam ストアページ公開中、Steam Next Fest 出展。アーリーアクセスを近日開始予定。</p>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">2024-02 – 2025-10</span>
+      <div class="who">
+        <b>株式会社リンクトブレイン</b>
+        <span>リードエンジニア、『BETZ』</span>
+        <span>10名のチーム</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>ゲームのクライアント・サーバー・インフラを設計し、フレームワークからデータベースまで技術スタック全体を選定。</li>
+          <li>シェーダーを開発し、Unity のレンダーパイプラインをカスタマイズ。</li>
+          <li>非同期処理、ECS、ネットワーク、クライアント・サーバー間通信、シリアライズ、ゲームロジックからなるコア層を構築。</li>
+          <li>Unity Visual Scripting 用ツールとエディタ拡張を開発し、デザイナーが自走できる環境を整え、エンジニアが低レイヤーに集中できる体制を実現。</li>
+          <li>スケジュールとタスク計画を主導し、エンジニアを育成。BETZ のライブラリを社内の他のプロジェクトに展開。</li>
+        </ul>
+        <p>使用技術：C#、Unity、Zenject、Groovy、Jenkins、PowerShell、ASP.NET、MagicOnion、DynamoDB、Redis、Roslyn。</p>
+        <p><a href="https://www.youtube.com/watch?v=dxK6rImEeg4">BETZ ティーザー（YouTube）</a>（発表済み・未発売）。</p>
+      </div>
+      <p class="result">アーキテクチャによりチーム全体の並行開発を実現し、プロジェクトを動作する MVP デモまで推進。指導により高度な設計・実装を担えるエンジニアが増加。</p>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">2022-04 – 2023-12</span>
+      <div class="who">
+        <b>株式会社DONUTS</b>
+        <span>ゲームエンジニア、『単車の虎』</span>
+        <span>50名のチーム</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>月間アクティブアカウント約20万のゲームで、6週間ごとの期間限定イベント（計約12本）と複数の常設イベントをリリース。</li>
+          <li>ゲーム全体のチャットとゲーム内漫画リーダーを開発。</li>
+          <li>自動プレイ用のチートツールを検出する AI を Python と C++ で開発。</li>
+          <li>CI/CD パイプラインを構築し、共通のデータベースライブラリとユーティリティライブラリを開発、Android アプリを保守。</li>
+          <li>新卒エンジニアの指導とコードレビューを担当。</li>
+        </ul>
+        <p>使用技術：PHP、Groovy、Java、JavaScript/TypeScript、Bash、Jenkins、AWS、MySQL、Apache、Redis、Python、C++。</p>
+      </div>
+      <p class="result">21か月間、収益に影響するバグはゼロ。デプロイの一部を自動化し、限られたサーバーリソースでゲーム全体のチャットを実現。</p>
+    </article>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>プロジェクト</h2>
+  <div class="rows projects">
+    <article class="row">
+      <span class="when" dir="ltr">ソース公開</span>
+      <div class="who">
+        <b><i>Unity.HBAO</i></b>
+        <span>Unity 用 HBAO+、C#</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>Unity 向けのスクリーンスペース HBAO+ アンビエントオクルージョンを C# で実装し、ZeroIQGames 名義でソースを公開（非商用・教育目的は無料）。</li>
+        </ul>
+      </div>
+      <p class="result"><a href="https://github.com/ZeroIQGames/Unity.HBAO">GitHub のソースコード</a></p>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">デモ</span>
+      <div class="who">
+        <b><i>Project Absolute Infinity</i></b>
+        <span>Unreal Engine のアクションゲームデモ</span>
+      </div>
+      <div class="what">
+        <ul>
+          <li>拡張性と保守性を重視した Unreal Engine のアクションゲーム設計。最小限のコード変更で格闘ゲームなど他のアクションジャンルに対応。</li>
+        </ul>
+      </div>
+      <p class="result"><a href="https://www.youtube.com/watch?v=-jWhDL1kAXA">動画</a> · <a href="https://dev.azure.com/BKCo-Games/Project-Absolute-Infinity/_git/Project-Absolute-Infinity">リポジトリ</a> · <a href="https://drive.google.com/file/d/1bX-0slDjJbRx-vKBruGzmFWopldHezax/view">ビルド</a></p>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>スキル</h2>
+  <div class="skills">
+    <div>
+      <h3>レンダリング</h3>
+      <ul>
+        <li>ライティング：大気散乱、事前計算 LUT、ボリュメトリックライトとシャドウ、アンビエントオクルージョン</li>
+        <li>ボリュメトリクス：フロクセル、レイマーチング、VDB</li>
+        <li>水：コースティクス、屈折、反射</li>
+        <li>地形レンダリング</li>
+        <li>スタイライズドポストエフェクト</li>
+        <li>実行時メッシュ生成、頂点アニメーションテクスチャ（VAT）</li>
+        <li>インスタンシング、バッチング、カリング</li>
+        <li>DirectX、独自レンダーパイプライン</li>
+      </ul>
+    </div>
+    <div>
+      <h3>エンジン、ツール、設計</h3>
+      <ul>
+        <li>Unity（URP）、Unreal Engine、Diligent Engine</li>
+        <li>エンジン統合、エディタ拡張</li>
+        <li>Unity Visual Scripting、Roslyn</li>
+        <li>ソフトウェア設計、依存性注入（Zenject、ASP.NET）</li>
+        <li>並列・非同期・リアクティブプログラミング</li>
+      </ul>
+    </div>
+    <div>
+      <h3>バックエンドとインフラ</h3>
+      <ul>
+        <li>クライアント・サーバー設計、ネットワーク</li>
+        <li>ASP.NET、MagicOnion</li>
+        <li>AWS、Microsoft Azure</li>
+        <li>DynamoDB、MySQL、Redis</li>
+        <li>CI/CD（Jenkins）</li>
+      </ul>
+    </div>
+    <div>
+      <h3>言語</h3>
+      <ul>
+        <li>C#、C++、C++/CLI、HLSL</li>
+        <li>Python</li>
+        <li>Java、JavaScript/<wbr>TypeScript、PHP</li>
+        <li>Groovy、Bash、PowerShell</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>学歴と資格</h2>
+  <div class="rows">
+    <article class="row">
+      <span class="when" dir="ltr">2019-04 – 2022-03</span>
+      <div class="who">
+        <b>東京大学</b>
+        <span>大学院工学系研究科 社会基盤学専攻</span>
+      </div>
+      <div class="what">
+        <p>修士（工学）。研究：高温高圧下でアルコールを用いて作るセメントレスコンクリート。</p>
+      </div>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">2014-09 – 2018-06</span>
+      <div class="who">
+        <b>シャリフ工科大学</b>
+        <span>土木工学科</span>
+      </div>
+      <div class="what">
+        <p>学士（工学）。</p>
+      </div>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">2010 – 2014</span>
+      <div class="who">
+        <b>National Organization for Development of Exceptional Talents (NODET)</b>
+        <span>高等学校 数学・物理コース</span>
+      </div>
+      <div class="what">
+        <p>高校卒業。</p>
+      </div>
+    </article>
+    <article class="row">
+      <span class="when" dir="ltr">資格・検定</span>
+      <div class="who">
+        <b>AWS Certified Cloud Practitioner</b>
+        <span><span dir="ltr">2023-03</span></span>
+      </div>
+      <div class="what">
+        <p>英語：IELTS General Training 8.0（<span dir="ltr">2024-04</span>）、TOEFL 106（<span dir="ltr">2018-08</span>）。</p>
+        <p>日本語：JLPT N2、148点（<span dir="ltr">2018-10</span>）。</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="reach">
+    <a class="btn" href="mailto:ce.afarahani@yahoo.com">ce.afarahani@yahoo.com</a>
+    <div class="pdfs" role="group" aria-labelledby="pdf-label">
+      <span class="pdf-label" id="pdf-label">職務経歴書 PDF</span>
+      <a class="pdf-card" href="pdf/Ahmad-Farahani-Resume-EN.pdf" lang="en"><span>English</span><span>PDF</span></a>
+      <a class="pdf-card" href="pdf/Ahmad-Farahani-Resume-JA.pdf" lang="ja"><span>日本語</span><span>PDF</span></a>
+      <a class="pdf-card" href="pdf/Ahmad-Farahani-Resume-FA.pdf" lang="fa"><span>فارسی</span><span>PDF</span></a>
+    </div>
+  </div>
+  <p class="updated">最終更新 2026年11月</p>
+</footer>
+
+<script src="weave.js?v=20261120e" defer></script>
+</body>
+</html>

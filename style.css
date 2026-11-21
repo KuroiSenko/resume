@@ -1,0 +1,401 @@
+:root {
+  --silk: #0e1838;
+  --gold: #d9aa3e;
+  --gold-hi: #f0cf7a;
+  --card: #efe6cf;
+  --ink: #0a0f22;
+  --bone: #e8e3d6;
+  --mute: #c3c9e0;
+  --rule: rgba(217, 170, 62, 0.45);
+  --mono: "Spline Sans Mono", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  accent-color: var(--gold);
+  scroll-behavior: smooth;
+}
+
+p, li, figcaption { text-wrap: pretty; }
+
+body {
+  background-color: var(--silk);
+  /* the warp: the direction contract's silk pinstripe */
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px);
+  color: var(--bone);
+  font-family: Figtree, sans-serif;
+  line-height: 1.5;
+}
+
+::selection { background: var(--gold); color: var(--ink); }
+html { scrollbar-color: var(--gold) var(--silk); }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.bar :focus-visible { outline-color: var(--ink); }
+
+a {
+  color: var(--gold-hi);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+main, footer { max-width: 80rem; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 3rem); }
+
+/* ---- punch-card bar ---- */
+
+.bar {
+  height: 64px;
+  background: var(--card);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.bar-label { text-transform: uppercase; white-space: nowrap; }
+
+.holes {
+  flex: 1;
+  height: 30px;
+  background: radial-gradient(circle, var(--ink) 0 2.2px, transparent 2.6px) 0 0 / 12px 10px;
+  opacity: 0.85;
+  -webkit-mask: linear-gradient(90deg, #000 0 18%, transparent 18% 22%, #000 22% 47%, transparent 47% 51%, #000 51% 80%, transparent 80% 83%, #000 83%);
+  mask: linear-gradient(90deg, #000 0 18%, transparent 18% 22%, #000 22% 47%, transparent 47% 51%, #000 51% 80%, transparent 80% 83%, #000 83%);
+}
+
+[dir="rtl"] .holes { transform: scaleX(-1); } /* ponytail: mirrors only the decorative hole pattern, not text */
+
+.lang { display: flex; gap: 0.875rem; }
+/* padding widens the tap target to the bar height without moving the text */
+.lang a { color: var(--ink); font-weight: 600; text-decoration: none; padding-block: 1.5rem; text-underline-offset: 0.35em; text-decoration-thickness: 2px; }
+.lang a:hover, .lang a[aria-current="page"] { text-decoration-line: underline; }
+
+/* ---- hero ---- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 2rem;
+  align-items: start;
+  padding-block: clamp(2rem, 6vw, 4rem) 2rem;
+}
+
+h1 {
+  font-family: "Marcellus SC", serif;
+  font-weight: 400;
+  font-size: clamp(3.5rem, 6.4vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--gold);
+}
+
+.role { font-size: 1.5rem; font-weight: 500; margin-block-start: 1.125rem; }
+
+.hook {
+  max-width: 30em;
+  margin-block-start: 0.875rem;
+  color: var(--mute);
+  font-size: 1.125rem;
+}
+
+.act { display: flex; flex-wrap: wrap; gap: 0.875rem; align-items: center; margin-block-start: 2.125rem; }
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+  padding: 0.875rem 1.375rem;
+  text-decoration: none;
+}
+.btn:hover { background: var(--gold-hi); }
+
+.ghost {
+  color: var(--gold-hi);
+  text-decoration: none;
+  border-block-end: 1px solid var(--gold);
+  padding-block-end: 2px;
+}
+
+.loom {
+  position: relative;
+  padding-block-start: 2.25rem;
+  padding-inline-end: 0;
+}
+
+.loom canvas { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; background: transparent; }
+
+.photo {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: 125px;
+  height: auto;
+  border: 12px solid var(--silk);
+  outline: 1px solid var(--gold);
+  outline-offset: -6px;
+}
+
+.loom figcaption {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-block-start: 0.625rem;
+  text-align: start;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--mute);
+}
+
+/* ---- sections and rows ---- */
+
+section { padding-block-start: clamp(2.5rem, 5vw, 4rem); }
+section > h2 { margin-block-end: 1rem; }
+
+h2 {
+  font-family: "Marcellus SC", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 10rem 15rem minmax(0, 1fr) 15rem;
+  gap: 1.75rem;
+  align-items: start;
+  border-block-start: 1px solid var(--rule);
+  padding-block: 1.375rem;
+}
+
+.when {
+  font-family: var(--mono);
+  font-size: 0.9375rem;
+  color: var(--gold-hi);
+}
+
+/* every block is a numbered row of the weave; the bar is ROW 0001 */
+@counter-style rownum { system: extends decimal; pad: 4 "0"; }
+main { counter-reset: rownum 1; }
+.row { counter-increment: rownum; }
+.when::before {
+  content: "ROW " counter(rownum, rownum);
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  color: var(--mute);
+}
+
+.who b { display: block; font-size: 1.25rem; font-weight: 600; }
+.who span { display: block; color: var(--mute); font-size: 0.9375rem; }
+
+.what { max-width: 70ch; }
+.what p + p { margin-block-start: 0.625rem; }
+.what ul { padding-inline-start: 1.125rem; }
+.what li { color: var(--bone); }
+.what li + li { margin-block-start: 0.375rem; }
+.what li::marker { color: var(--gold); }
+.what ul + p { margin-block-start: 0.75rem; }
+.what p { color: var(--bone); }
+
+.result { color: var(--gold-hi); line-height: 1.45; }
+
+/* ---- skills ---- */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.75rem;
+  border-block-start: 1px solid var(--rule);
+  padding-block-start: 1.375rem;
+}
+
+.skills h3 {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-block-end: 0.625rem;
+}
+
+.skills ul { list-style: none; }
+.skills li { padding-block: 0.1875rem; color: var(--bone); }
+
+/* ---- footer ---- */
+
+.contact {
+  margin-block-start: clamp(2.5rem, 5vw, 4rem);
+  border-block-start: 1px solid var(--rule);
+  padding-block: 2rem 3rem;
+}
+
+/* one row: the email action, then the labelled set of PDF cards; wraps on phones */
+.reach { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 1.25rem 2.5rem; }
+.contact .btn { display: inline-flex; align-items: center; min-height: 3.5rem; padding-inline: 1.5rem; }
+
+.pdfs { display: flex; flex-wrap: wrap; gap: 0.5rem 0.75rem; }
+.pdf-label {
+  flex-basis: 100%;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+/* a punch card: cream stock, a row of holes along the top, an inset gold rule */
+.pdf-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  inline-size: 9rem;
+  min-height: 3.5rem;
+  padding: 1.125rem 0.875rem 0.5rem;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 3px var(--card), inset 0 0 0 4px var(--gold);
+  text-decoration: none;
+  transition: background-color 0.15s ease-out, transform 0.15s ease-out;
+}
+.pdf-card::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 7px;
+  inset-inline: 10px;
+  height: 5px;
+  background: radial-gradient(circle, var(--ink) 0 1.6px, transparent 2px) 0 0 / 9px 5px space no-repeat;
+  opacity: 0.8;
+}
+.pdf-card span:first-child { font-weight: 600; font-size: 0.9375rem; line-height: 1.2; }
+.pdf-card span:last-child { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.08em; opacity: 0.7; }
+.pdf-card:hover { background: #f7f0dc; }
+@media (prefers-reduced-motion: no-preference) { .pdf-card:hover { transform: translateY(-2px); } }
+.pdf-card:focus-visible { outline-color: var(--ink); outline-offset: -6px; }
+
+.updated { margin-block-start: 1.5rem; color: var(--mute); font-size: 0.875rem; }
+
+/* ---- per-language fonts ---- */
+
+:root:lang(ja) { --mono: "Spline Sans Mono", "Zen Kaku Gothic New", monospace; }
+body:lang(ja) { font-family: "Zen Kaku Gothic New", "Figtree", sans-serif; word-break: auto-phrase; line-break: strict; }
+.nw { white-space: nowrap; }
+/* EN month-name date ranges need a wider first track to stay on one line */
+@media (min-width: 900px) { html:lang(en) .row { grid-template-columns: 11.5rem 15rem minmax(0, 1fr) 15rem; } }
+h1:lang(ja), h2:lang(ja) { font-family: "Shippori Mincho B1", serif; }
+
+:root:lang(fa) { --mono: "Spline Sans Mono", "Vazirmatn", monospace; }
+body:lang(fa) { font-family: "Vazirmatn", "Figtree", sans-serif; }
+h1:lang(fa), h2:lang(fa) { font-family: "Vazirmatn", sans-serif; font-weight: 800; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ---- narrow screens ---- */
+
+@media (max-width: 899px) {
+  .hero { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 1fr; gap: 0.625rem; }
+  .photo { width: 92px; border-width: 8px; outline-offset: -4px; }
+  .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pdfs { inline-size: 100%; }
+  .pdf-label { flex-basis: 100%; }
+  .pdf-card { flex: 1 1 0; inline-size: auto; min-inline-size: 0; }
+  .contact .btn { flex: 1 1 100%; justify-content: center; }
+}
+
+/* ---- print ---- */
+
+@page { size: A4; margin: 13mm; }
+
+@media print {
+  body {
+    background: #fff;
+    color: #111;
+    font-size: 9.5pt;
+    line-height: 1.2;
+  }
+
+  a { color: #111; }
+
+  /* show the URL after external links only; keep it from breaking RTL */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    unicode-bidi: isolate;
+    font-size: 7pt;
+    word-break: break-all;
+  }
+
+  .bar, .loom, .act, .pdfs { display: none; }
+
+  main, footer { max-width: none; padding-inline: 0; }
+
+  h1 {
+    font-family: "Marcellus SC", serif;
+    color: #000;
+    font-size: 24pt;
+  }
+  h1:lang(ja) { font-family: "Shippori Mincho B1", serif; }
+  h1:lang(fa) { font-family: "Vazirmatn", sans-serif; }
+
+  .hero { display: block; padding-block: 0; }
+  .role { font-size: 12pt; margin-block-start: 4pt; }
+  .hook { font-size: 10pt; color: #111; margin-block-start: 3pt; }
+
+  section { padding-block-start: 3pt; }
+  h2 { color: #000; font-size: 12pt; margin-block-end: 3pt; break-after: avoid; }
+
+  /* two-column print row: date and employer beside the description, as on a standard résumé */
+  .row {
+    display: grid;
+    grid-template-columns: 26% 1fr;
+    grid-template-areas: "when what" "who what" ". result";
+    grid-template-rows: auto 1fr auto;
+    column-gap: 10pt;
+    border-block-start: 0.5pt solid #999;
+    padding-block: 2pt;
+  }
+  .what li, .result, .who, .row { break-inside: avoid; }
+  .when { grid-area: when; }
+  .who { grid-area: who; }
+  .what { grid-area: what; margin-block: 0; }
+  .result { grid-area: result; margin-block-start: 1pt; }
+  .what p { color: #111; }
+  .what p + p { margin-block-start: 2pt; }
+  .what li { color: #111; }
+  .what li + li { margin-block-start: 0; }
+  .what ul + p { margin-block-start: 2pt; }
+  .what li::marker { color: #111; }
+  .when, .result, .who span { color: #111; }
+  .when { font-size: 8.5pt; }
+  .when::before { display: none; }
+  .who b { font-size: 10pt; }
+  .who span, .result { font-size: 9pt; }
+
+  .skills { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-block-start: 3pt; }
+  /* long katakana terms break mid-word in four print columns */
+  body:lang(ja) .skills, body:lang(fa) .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14pt; }
+  body:lang(ja) .skills li, body:lang(fa) .skills li { font-size: 8.5pt; }
+  body:lang(ja) .what li, body:lang(ja) .what p { font-size: 9pt; }
+  .skills h3 { color: #000; font-size: 8pt; margin-block-end: 1.5pt; }
+  .skills li { color: #111; padding-block: 0.25pt; font-size: 9pt; }
+
+  .contact { margin-block: 4pt 0; padding-block: 2pt 0; font-size: 9.5pt; }
+  /* email and date share one line in print */
+  .contact { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .updated { margin-block-start: 0; font-size: 8.5pt; color: #111; }
+  .skills, .contact { border-color: #999; }
+  main { padding-block-end: 0; margin-block-end: 0; }
+  .contact .btn { flex: none; min-height: 0; justify-content: flex-start; padding: 0; background: none; border: 0; color: #111; }
+}
